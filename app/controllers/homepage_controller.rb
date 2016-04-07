@@ -1,5 +1,5 @@
 module Controller
-  class Homepage < ::Base
+  class Homepage < ::BaseServer
     get "/" do
       erb :homepage
     end

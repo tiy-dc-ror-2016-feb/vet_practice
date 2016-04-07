@@ -1,0 +1,33 @@
+<a href="/owners/new">New Owner</a>
+
+<table>
+  <thead>
+    <th>
+      Name
+    </th>
+    <th>
+      Custmer Since
+    </th>
+    <th>
+
+    </th>
+  </thead>
+  <% @owners.each do |owner| %>
+    <tr>
+      <td>
+        <%= owner.name %>
+      </td>
+
+      <td>
+        <%=  owner.created_at.in_time_zone("EST").strftime("%B-%Y") %>
+      </td>
+      <td>
+        <form class="" action="/owners/<%= owner.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit" name="button">Delete</button>
+        </form>
+      </td>
+
+    </tr>
+  <% end %>
+</table>

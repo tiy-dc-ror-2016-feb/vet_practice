@@ -1,0 +1,12 @@
+h1  {
+  color: red;
+}
+
+.input-invalid {
+  display: none;
+}
+
+input:invalid + p.input-invalid{
+  display: block;
+  border: 1px solid red;
+}
